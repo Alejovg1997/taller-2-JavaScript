@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrones con Loop anidados</title>
+</head>
+<body>
+    <script>
+        function dibujarCuadradoLleno() {
+            for (let i = 0; i < 5; i++) {
+                document.write("*****<br>");
+            }
+            document.write("<br>");
+        }
+
+        function dibujarCuadradoHueco() {
+            for (let i = 0; i < 5; i++) {
+                if (i == 0 || i == 4) {
+                    document.write("*****<br>");
+                } else {
+                    document.write("*   *<br>");
+                }
+            }
+            document.write("<br>");
+        }   
+
+        function dibujarTableroAjedrez() {
+            for (let i = 0; i < 8; i++) {
+                if (i % 2 == 0) {
+                    document.write("* * * * * * * * <br>");
+                } else {
+                    document.write(" * * * * * * * *<br>");
+                }
+            }
+            document.write("<br>");
+        }
+
+        function dibujarPiramideIzquierda() {
+            for (let i = 1; i <= 5; i++) {
+                let linea = "";
+                for (let j = 1; j <= i; j++) {
+                    linea += "*";
+                }
+                document.write(linea + "<br>");
+            }
+            document.write("<br>");
+        }
+
+        function dibujarPiramideCentrada() {
+            let espacios = 4;
+            for (let i = 1; i <= 5; i++) {
+                let linea = "";
+                for (let j = 1; j <= espacios; j++) {
+                    linea += "&nbsp;";
+                }
+                for (let k = 1; k <= 2 * i - 1; k++) {
+                    linea += "*";
+                }
+                espacios--;
+                document.write(linea + "<br>");
+            }
+            document.write("<br>");
+        }
+
+        function dibujarPiramideInvertida() {
+            for (let i = 5; i >= 1; i--) {
+                let linea = "";
+                for (let j = 5; j >= i; j--) {
+                    linea += "*";
+                }
+                document.write(linea + "<br>");
+            }
+            document.write("<br>");
+        }
+
+        function dibujarDiamante() {
+            dibujarPiramideCentrada();
+            dibujarPiramideInvertida();
+        }
+
+        dibujarCuadradoLleno();
+        dibujarCuadradoHueco();
+        dibujarTableroAjedrez();
+        dibujarCuadradoHueco();
+        dibujarPiramideIzquierda();
+        dibujarPiramideCentrada();
+        dibujarPiramideInvertida();
+        dibujarDiamante();
+    </script>
+</body>
+</html>
